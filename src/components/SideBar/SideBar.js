@@ -13,8 +13,8 @@ const SideBar = () => (
     </div>
 
     <h2>Zoe Callaghan</h2>
-    <p className="role">Software Engineer</p>
-    <p className="tag">Code First Girls&nbsp;Ambassador</p>
+    <p className="role-x">Software Engineer</p>
+    <p className="tag-x">Code First Girls&nbsp;Ambassador</p>
 
     <div className="details">
       <div>

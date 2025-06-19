@@ -5,6 +5,7 @@
   max-width: 1280px;
   margin: var(--nav-clearance) auto 0;
   padding: 0 1rem;
+  align-items: flex-start; 
 }
 
 .content {

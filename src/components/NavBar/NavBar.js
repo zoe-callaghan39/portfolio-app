@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-const links = ["About", "CV", "Portfolio", "Blog", "Contact"];
+const links = ["About", "CV", "Portfolio", "Blog"];
 
 const NavBar = () => (
   <nav className="nav">

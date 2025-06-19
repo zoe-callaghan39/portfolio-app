@@ -11,7 +11,6 @@
     padding: 0.75rem 2.5rem;
     border-radius: 9999px;       
     box-shadow: 0 0 8px rgba(0,0,0,.25);
-
     width: max-content;         
     display: flex;
   }
@@ -36,4 +35,5 @@
   .nav a:hover,
   .nav a:focus { color: #fff; }
   .nav a.active { color: #fff; }
+  .nav ul { flex-direction: row; }
 }
