@@ -1,0 +1,43 @@
+/* ─────────── global key-frames (never hashed) ─────────── */
+@keyframes twinkle {
+  0%,100% { opacity: .2 }
+  50%     { opacity: 1 }
+}
+
+@keyframes fall {
+  0%   { transform: translateY(0) }
+  100% { transform: translateY(calc(100vh + 20px)) }
+}
+
+@keyframes twinkleDim {
+  0%,100% { opacity: .05 }
+  50%     { opacity: .4  }
+}
+
+/* existing bright curve stays as-is (rename it for clarity) */
+@keyframes twinkleBright {
+  0%,100% { opacity: .2 }
+  50%     { opacity: 1  }
+}
+
+
+/* ─────────── layout (desktop first) ─────────── */
+@media (min-width: 769px) {
+  .starsContainer {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;           /* black sky */
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;       /* keep page links clickable */
+  }
+
+  .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    /* animation string is set inline by JS */
+  }
+}
