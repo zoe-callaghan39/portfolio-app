@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./NavBar.module.css";
+import "./NavBar.css";
 
 const links = ["About", "CV", "Portfolio", "Blog", "Contact"];
 
 const NavBar = () => (
-  <nav className={styles.nav}>
+  <nav className="nav">
     <ul>
       {links.map((label) => (
         <li key={label}>
@@ -13,7 +13,7 @@ const NavBar = () => (
             to={
               label.toLowerCase() === "about" ? "/" : `/${label.toLowerCase()}`
             }
-            className={({ isActive }) => (isActive ? styles.active : undefined)}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
           >
             {label}
           </NavLink>

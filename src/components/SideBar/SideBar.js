@@ -1,22 +1,29 @@
 import React from "react";
-import styles from "./SideBar.module.css";
+import "./SideBar.css";
 import avatar from "../../assets/avatar.gif";
+import githubIcon from "../../assets/github.png";
+import instagramIcon from "../../assets/instagram.png";
+import linkedinIcon from "../../assets/linkedin.png";
+import tiktokIcon from "../../assets/ticktock.png";
 
 const SideBar = () => (
-  <aside className={styles.panel}>
-    <img src={avatar} alt="Avatar" className={styles.avatar} />
-    <h2>Zoe Callaghan</h2>
-    <p className={styles.role}>Software Engineer</p>
-    <p className={styles.tag}>Code First Girls Ambassador</p>
+  <aside className="sidebar">
+    <div className="avatar-box">
+      <img src={avatar} alt="Zoe Callaghan avatar" />
+    </div>
 
-    <div className={styles.details}>
+    <h2>Zoe Callaghan</h2>
+    <p className="role">Software Engineer</p>
+    <p className="tag">Code First Girls&nbsp;Ambassador</p>
+
+    <div className="details">
       <div>
         <span>EMAIL</span>
         <a href="mailto:zoe@gmail.com">zoe@gmail.com</a>
       </div>
       <div>
         <span>PHONE</span>
-        <a href="tel:+447551768063">+44 7551 768 063</a>
+        <a href="tel:+447551768063">+44&nbsp;7551&nbsp;768&nbsp;063</a>
       </div>
       <div>
         <span>LOCATION</span>
@@ -24,8 +31,35 @@ const SideBar = () => (
       </div>
     </div>
 
-    <div className={styles.socials}>
-      {/* drop in icon components or inline SVGs */}
+    <div className="socials">
+      <a
+        href="https://github.com/yourUser"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={githubIcon} alt="GitHub" />
+      </a>
+      <a
+        href="https://www.instagram.com/yourUser"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={instagramIcon} alt="Instagram" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/yourUser"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={linkedinIcon} alt="LinkedIn" />
+      </a>
+      <a
+        href="https://www.tiktok.com/@yourUser"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={tiktokIcon} alt="TikTok" />
+      </a>
     </div>
   </aside>
 );

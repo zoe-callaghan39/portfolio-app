@@ -1,16 +1,12 @@
 import React from "react";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./About.css";
-
-/* PNG assets */
 import iconCode from "../../assets/code.png";
 import iconTeam from "../../assets/team.png";
 import iconLightbulb from "../../assets/lightbulb.png";
 import iconRocket from "../../assets/rocket.png";
 
-/* data */
 const stacks = [
-  // core front-end
   "React",
   "JavaScript",
   "TypeScript",
@@ -18,25 +14,18 @@ const stacks = [
   "Next js",
   "ES6",
   "Pixi js",
-
-  // back-end / full-stack
   "Node js",
   "Express",
   "GraphQL",
 
-  // databases
   "MySQL",
   "SQLite",
   "PostgreSQL",
 
-  // tooling & testing
   "Jest",
   "Prisma",
   "Docker",
   "GitHub Actions",
-
-  // version control / hosting
-  "Git",
 ];
 
 const qualities = [
@@ -69,7 +58,6 @@ const About = () => (
     <section className="wrapper">
       <h1>About Me</h1>
 
-      {/* paragraphs + pills share card-matching horizontal padding */}
       <div className="pad-x">
         <p>
           I’m a software engineer specialising in front-end development with two
@@ -88,7 +76,6 @@ const About = () => (
           on.
         </p>
 
-        {/* skill pills */}
         <div className="stack">
           {stacks.map((s) => (
             <span key={s}>{s}</span>
@@ -96,7 +83,6 @@ const About = () => (
         </div>
       </div>
 
-      {/* quality cards */}
       <div className="cards">
         {qualities.map(({ icon, title, text }) => (
           <article key={title}>

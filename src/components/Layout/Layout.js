@@ -3,18 +3,20 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import SideBar from "../SideBar/SideBar";
 import StarsBackground from "../StarsBackground/StarsBackground";
-import styles from "./Layout.module.css";
+import "./Layout.css";
 
 const Layout = () => (
   <>
     <StarsBackground />
     <NavBar />
-    <SideBar />
 
-    {/* Push main content to the right so the sidebar doesn't overlap */}
-    <main className={styles.content}>
-      <Outlet />
-    </main>
+    <div className="page">
+      <SideBar />
+
+      <main className="content">
+        <Outlet />
+      </main>
+    </div>
   </>
 );
 
