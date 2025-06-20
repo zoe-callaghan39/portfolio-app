@@ -23,10 +23,10 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="newsletter-proposal" element={<Newsletter />} />
-          <Route path="*" element={<About />} />
           <Route path="demo-video" element={<Demo />} />
           <Route path="blog/career-switching" element={<BlogPost1 />} />
           <Route path="blog/levelling-up" element={<BlogPost2 />} />
+          <Route path="*" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
