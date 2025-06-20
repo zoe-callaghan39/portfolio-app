@@ -1,13 +1,13 @@
 .page {
   display: flex;
   justify-content: center;
-  gap: 2rem;          
+  align-items: stretch;        /* stretch children to same height */
+  min-height: 74vh;            /* match sidebar’s 74vh */
   max-width: 1280px;
   margin: var(--nav-clearance) auto 0;
   padding: 0 1rem;
-  align-items: flex-start; 
 }
 
-.content {
-  flex: 1 1 0;        
+.page-content {
+  flex: 1 1 0;
 }

@@ -13,7 +13,7 @@ const Layout = () => (
     <div className="page">
       <SideBar />
 
-      <main className="content">
+      <main className="page-content">
         <Outlet />
       </main>
     </div>

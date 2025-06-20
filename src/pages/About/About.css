@@ -12,11 +12,11 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 2.2rem 2.6rem;
-    background: rgba(255,255,255,.10);
+    background: rgba(255,255,255, .10);
     backdrop-filter: blur(6px);
     border-radius: 1rem;
-    max-height: 75vh;
 
+    height: 73vh;             
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -26,7 +26,6 @@
     color: var(--white-soft);
     font-family: "Poppins", sans-serif;
     line-height: 1.55;
-    padding-bottom: 4rem;
   }
 
   h1 {
