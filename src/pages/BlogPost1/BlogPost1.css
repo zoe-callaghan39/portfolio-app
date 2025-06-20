@@ -82,10 +82,13 @@
     align-items: center;
     justify-content: center;
   }
+
   .bp1-video-el {
     width: calc(100% - 5rem);
     max-width: 100%;
-    height: auto;
+    aspect-ratio: 9 / 16; 
+    object-fit: contain;    
     border-radius: .8rem;
+    display: block;
   }
 }

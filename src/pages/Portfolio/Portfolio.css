@@ -51,13 +51,20 @@
       padding-top: 2rem; 
     }
   
-    .pf-screenshot {
-      width: 100%; 
+    .pf-screenshot-wrapper {
+      width: 100%;
       height: 160px;
-      object-fit: contain;
-      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  
+    
+    .pf-screenshot {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
     .pf-skills {
       width: calc(100% - 2rem);
       margin: 0.5rem auto;       

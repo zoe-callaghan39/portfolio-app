@@ -73,4 +73,23 @@
     display: block;
     margin: 0 auto;
   }
+
+  .newsletter-screenshot-wrapper {
+    width: 110%;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+  }
+
+  .newsletter-screenshot {
+    display: block;
+    height: 300px;   
+    width: auto;  
+    max-width: 100%;   
+    object-fit: contain;
+  }
+
+  .newsletter-screenshot.loaded {
+    opacity: 1;
+    transition: none;
+  }
 }

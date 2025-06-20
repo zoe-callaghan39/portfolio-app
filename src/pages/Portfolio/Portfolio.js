@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Portfolio.css";
 import leaderboardImg from "../../assets/PortfolioLeaderboard.png";
@@ -75,7 +75,13 @@ const projects = [
     title: "Recorded Demo",
     img: demoImg,
     desc: `A recorded demo of our team's feature: integrating the Paddy Power "Wonder Wheel" losing screen into Prismic CMS.`,
-    skills: ["Video Production", "Prismic CMS", "Collaboration"],
+    skills: [
+      "Video Production",
+      "Prismic CMS",
+      "Collaboration",
+      "Photoshop",
+      "Canva",
+    ],
     liveLink: "/demo-video",
   },
   {
@@ -88,9 +94,41 @@ const projects = [
       "Prisma",
       "Authentication",
       "Email Verification",
+      "React",
+      "JavaScript",
     ],
   },
 ];
+
+const PortfolioImage = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "160px",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          opacity: loaded ? 1 : 0,
+          transition: "none",
+        }}
+      />
+    </div>
+  );
+};
 
 const Portfolio = () => (
   <>
@@ -102,13 +140,7 @@ const Portfolio = () => (
       <div className="pf-grid">
         {projects.map(({ title, img, desc, skills, codeLink, liveLink }) => (
           <article key={title} className="pf-card">
-            <img
-              src={img}
-              alt={title}
-              height={100}
-              width={100}
-              className="pf-screenshot"
-            />
+            <PortfolioImage src={img} alt={title} />
 
             {skills && (
               <div className="pf-skills">

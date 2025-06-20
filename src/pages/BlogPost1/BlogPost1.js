@@ -57,7 +57,14 @@ const BlogPost1 = () => (
         </div>
 
         <div className="bp1-video">
-          <video controls src={demoVideo} className="bp1-video-el" />
+          <video
+            controls
+            autoPlay
+            muted
+            playsInline
+            src={demoVideo}
+            className="bp1-video-el"
+          />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Blog.css";
 
@@ -20,33 +20,59 @@ const posts = [
   },
 ];
 
-const Blog = () => (
-  <>
-    <StarsBackground />
+const allBlogImages = [blog1, blog2];
 
-    <section className="blog-page">
-      <h1 className="blog-title">Blog</h1>
+const BlogImage = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
 
-      <div className="blog-grid">
-        {posts.map(({ title, img, desc, link }) => (
-          <article key={title} className="blog-card">
-            <img src={img} alt={title} className="blog-screenshot" />
+  return (
+    <div className="blog-screenshot-wrapper">
+      <img
+        src={src}
+        alt={alt}
+        className={`blog-screenshot ${loaded ? "loaded" : ""}`}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+};
 
-            <div className="blog-content">
-              <h4 className="blog-card-title">{title}</h4>
-              <p className="blog-desc">{desc}</p>
-            </div>
+const Blog = () => {
+  useEffect(() => {
+    allBlogImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
-            <div className="blog-footer">
-              <a href={link} className="blog-btn">
-                Read&nbsp;More
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  </>
-);
+  return (
+    <>
+      <StarsBackground />
+
+      <section className="blog-page">
+        <h1 className="blog-title">Blog</h1>
+
+        <div className="blog-grid">
+          {posts.map(({ title, img, desc, link }) => (
+            <article key={title} className="blog-card">
+              <BlogImage src={img} alt={title} />
+
+              <div className="blog-content">
+                <h4 className="blog-card-title">{title}</h4>
+                <p className="blog-desc">{desc}</p>
+              </div>
+
+              <div className="blog-footer">
+                <a href={link} className="blog-btn">
+                  Read&nbsp;More
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default Blog;

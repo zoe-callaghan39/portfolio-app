@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Newsletter.css";
@@ -8,6 +8,32 @@ import newsletter2 from "../../assets/Newsletter2.png";
 import newsletter3 from "../../assets/Newsletter5.png";
 import newsletter4 from "../../assets/Newsletter4.png";
 import arrowIcon from "../../assets/arrow.png";
+
+const allNewsletterImages = [
+  newsletter1,
+  newsletter2,
+  newsletter3,
+  newsletter4,
+];
+
+allNewsletterImages.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
+
+const NewsletterImage = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="newsletter-screenshot-wrapper">
+      <img
+        src={src}
+        alt={alt}
+        className={`newsletter-screenshot ${loaded ? "loaded" : ""}`}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+};
 
 const Newsletter = () => (
   <>
@@ -31,10 +57,10 @@ const Newsletter = () => (
       </div>
 
       <div className="newsletter-images">
-        <img src={newsletter1} alt="Newsletter mockup 1" />
-        <img src={newsletter2} alt="Newsletter mockup 2" />
-        <img src={newsletter3} alt="Newsletter mockup 3" />
-        <img src={newsletter4} alt="Newsletter mockup 4" />
+        <NewsletterImage src={newsletter1} alt="Newsletter mockup 1" />
+        <NewsletterImage src={newsletter2} alt="Newsletter mockup 2" />
+        <NewsletterImage src={newsletter3} alt="Newsletter mockup 3" />
+        <NewsletterImage src={newsletter4} alt="Newsletter mockup 4" />
       </div>
     </section>
   </>
