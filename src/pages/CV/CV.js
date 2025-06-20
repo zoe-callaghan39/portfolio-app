@@ -2,7 +2,7 @@ import React from "react";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./CV.css";
 import bookIcon from "../../assets/book.png";
-import cvFile from "../../assets/zoe_callaghan-cv.pdf";
+import cvFile from "../../assets/zoe-callaghan-cv.pdf";
 
 const Section = ({ title, children }) => (
   <div className="entry">
