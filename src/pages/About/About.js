@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./About.css";
 import iconCode from "../../assets/code.png";
@@ -11,17 +11,15 @@ const stacks = [
   "JavaScript",
   "TypeScript",
   "Preact",
-  "Next js",
+  "Next.js",
   "ES6",
-  "Pixi js",
-  "Node js",
+  "Pixi.js",
+  "Node.js",
   "Express",
   "GraphQL",
-
   "MySQL",
   "SQLite",
   "PostgreSQL",
-
   "Jest",
   "Prisma",
   "Docker",
@@ -51,57 +49,65 @@ const qualities = [
   },
 ];
 
-const About = () => (
-  <>
-    <StarsBackground />
+const About = () => {
+  // preload the avatar.gif on mount
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/avatar.gif";
+  }, []);
 
-    <section className="wrapper">
-      <h1>About Me</h1>
+  return (
+    <>
+      <StarsBackground />
 
-      <div className="pad-x">
-        <p>
-          I’m a software engineer specialising in front-end development with two
-          years of professional experience building high-traffic,
-          customer-facing web platforms at Flutter UK &amp; Ireland. My toolkit
-          centres on React, JavaScript and TypeScript, and I love using
-          data-driven experimentation and agile delivery to turn ideas into
-          seamless, production-ready user experiences.
-        </p>
+      <section className="wrapper">
+        <h1>About Me</h1>
 
-        <p>
-          Above all, I’m passionate about creating accessible, high-performance
-          products and championing diversity in tech — whether by helping women
-          pivot into tech careers, sharing knowledge to foster continuous
-          learning, or advocating for inclusive design in every project I take
-          on.
-        </p>
+        <div className="pad-x">
+          <p>
+            I’m a software engineer specialising in front-end development with
+            two years of professional experience building high-traffic,
+            customer-facing web platforms at Flutter UK &amp; Ireland. My
+            toolkit centres on React, JavaScript and TypeScript, and I love
+            using data-driven experimentation and agile delivery to turn ideas
+            into seamless, production-ready user experiences.
+          </p>
 
-        <div className="stack">
-          {stacks.map((s) => (
-            <span key={s}>{s}</span>
+          <p>
+            Above all, I’m passionate about creating accessible,
+            high-performance products and championing diversity in tech —
+            whether by helping women pivot into tech careers, sharing knowledge
+            to foster continuous learning, or advocating for inclusive design in
+            every project I take on.
+          </p>
+
+          <div className="stack">
+            {stacks.map((s) => (
+              <span key={s}>{s}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="cards">
+          {qualities.map(({ icon, title, text }) => (
+            <article key={title}>
+              <img
+                src={icon}
+                alt=""
+                width={100}
+                height={100}
+                aria-hidden="true"
+              />
+              <div>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </div>
+            </article>
           ))}
         </div>
-      </div>
-
-      <div className="cards">
-        {qualities.map(({ icon, title, text }) => (
-          <article key={title}>
-            <img
-              src={icon}
-              alt=""
-              width={100}
-              height={100}
-              aria-hidden="true"
-            />
-            <div>
-              <h4>{title}</h4>
-              <p>{text}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  </>
-);
+      </section>
+    </>
+  );
+};
 
 export default About;
