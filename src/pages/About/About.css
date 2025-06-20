@@ -79,7 +79,7 @@
     grid-template-columns: repeat(2,1fr);
     gap: 1.4rem;
     padding-top: 1rem;
-    zoom: 0.9.5;
+    zoom: 0.9;
   }
 
   article {
