@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Demo.css";
 
-import demoVideo from "../../assets/demo.mp4";
+import demoVideo from "../../assets/demo1.mp4";
 import arrowIcon from "../../assets/arrow.png";
 
 const Demo = () => (
