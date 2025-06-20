@@ -1,8 +1,8 @@
 .page {
   display: flex;
   justify-content: center;
-  align-items: stretch;        /* stretch children to same height */
-  min-height: 74vh;            /* match sidebar’s 74vh */
+  align-items: stretch;     
+  min-height: 84vh;          
   max-width: 1280px;
   margin: var(--nav-clearance) auto 0;
   padding: 0 1rem;

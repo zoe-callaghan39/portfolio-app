@@ -7,7 +7,7 @@
     position: sticky;
     top: 120px;
     flex-shrink: 0;
-    height: 74vh;
+    height: 79vh;
     background: var(--panel-bg, rgba(255,255,255,.10));
     backdrop-filter: blur(var(--panel-blur,6px));
     border-radius: 1rem;
