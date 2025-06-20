@@ -50,7 +50,6 @@ const qualities = [
 ];
 
 const About = () => {
-  // preload the avatar.gif on mount
   useEffect(() => {
     const img = new Image();
     img.src = "/avatar.gif";
