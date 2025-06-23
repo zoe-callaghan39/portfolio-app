@@ -119,6 +119,41 @@ const CV = () => (
               standards were upheld in every interaction.
             </li>
           </ul>
+
+          <h3 className="marker">Earlier Roles</h3>
+          <p className="role">
+            Sales Consultant | Luvyababes Fancy Dress <span>(2017 – 2021)</span>
+          </p>
+          <p className="role">
+            Waitress &amp; Bar Staff | Lamberts Restaurant{" "}
+            <span>(2016 – 2017)</span>
+          </p>
+          <p className="role">
+            Waitress &amp; Bar Staff | Stick or Twist <span>(2014 – 2016)</span>
+          </p>
+          <ul>
+            <li>
+              Built strong interpersonal and communication skills through
+              fast-paced customer-facing roles, ensuring clarity and empathy in
+              every interaction—skills now central to delivering user-focused
+              digital experiences.
+            </li>
+            <li>
+              Developed consultative sales and upselling techniques, now
+              transferable to stakeholder collaboration and presenting technical
+              ideas effectively.
+            </li>
+            <li>
+              Honed structured problem solving and multitasking under pressure,
+              key to working in agile environments and delivering clean,
+              efficient UI code.
+            </li>
+            <li>
+              Learned the value of inclusive, team-driven environments—now
+              mirrored in collaborative cross-functional squads delivering
+              customer-first digital journeys.
+            </li>
+          </ul>
         </Section>
 
         <Section title="Leadership &amp; Volunteering">
