@@ -74,7 +74,7 @@ const SideBar = () => {
 
       <div className="socials">
         <a
-          href="https://github.com/yourUser"
+          href="https://github.com/zoe-callaghan39"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -88,7 +88,7 @@ const SideBar = () => {
           <img src={instagramIcon} alt="Instagram" />
         </a>
         <a
-          href="https://www.linkedin.com/in/yourUser"
+          href="https://www.linkedin.com/in/zoe-callaghan/"
           target="_blank"
           rel="noopener noreferrer"
         >
