@@ -8,12 +8,15 @@ body {
   zoom: 0.9;
 }
 
+html, body {
+  background: #000;       
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* src/index.css */
 :root {
   --panel-bg    : rgba(255,255,255,.10);
   --panel-blur  : 6px;
@@ -27,7 +30,6 @@ code {
   --nav-clearance: 50px;
 }
 
-/* optional global typography */
 body {
   font-family: "Poppins", sans-serif;
   color: var(--white-soft);
