@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Portfolio.css";
 import leaderboardImg from "../../assets/PortfolioLeaderboard.png";
 import weatherImg from "../../assets/PortfolioWeather.png";
@@ -131,58 +130,54 @@ const PortfolioImage = ({ src, alt }) => {
 };
 
 const Portfolio = () => (
-  <>
-    <StarsBackground />
+  <section className="pf-page">
+    <h1 className="pf-title">Portfolio</h1>
 
-    <section className="pf-page">
-      <h1 className="pf-title">Portfolio</h1>
+    <div className="pf-grid">
+      {projects.map(({ title, img, desc, skills, codeLink, liveLink }) => (
+        <article key={title} className="pf-card">
+          <PortfolioImage src={img} alt={title} />
 
-      <div className="pf-grid">
-        {projects.map(({ title, img, desc, skills, codeLink, liveLink }) => (
-          <article key={title} className="pf-card">
-            <PortfolioImage src={img} alt={title} />
-
-            {skills && (
-              <div className="pf-skills">
-                {skills.map((skill) => (
-                  <span key={skill} className="pf-pill">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            <div className="pf-content">
-              <h4 className="pf-card-title">{title}</h4>
-              <p className="pf-desc">{desc}</p>
-              <div className="pf-footer">
-                {codeLink && (
-                  <a
-                    href={codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pf-btn pf-btn-code"
-                  >
-                    <img src={codeIcon} alt="Code" />
-                  </a>
-                )}
-                {liveLink && (
-                  <a
-                    href={liveLink}
-                    className="pf-btn pf-btn-live"
-                    target={liveLink.startsWith("http") ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                  >
-                    View&nbsp;Live
-                  </a>
-                )}
-              </div>
+          {skills && (
+            <div className="pf-skills">
+              {skills.map((skill) => (
+                <span key={skill} className="pf-pill">
+                  {skill}
+                </span>
+              ))}
             </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  </>
+          )}
+
+          <div className="pf-content">
+            <h4 className="pf-card-title">{title}</h4>
+            <p className="pf-desc">{desc}</p>
+            <div className="pf-footer">
+              {codeLink && (
+                <a
+                  href={codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pf-btn pf-btn-code"
+                >
+                  <img src={codeIcon} alt="Code" />
+                </a>
+              )}
+              {liveLink && (
+                <a
+                  href={liveLink}
+                  className="pf-btn pf-btn-live"
+                  target={liveLink.startsWith("http") ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                >
+                  View&nbsp;Live
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
 );
 
 export default Portfolio;

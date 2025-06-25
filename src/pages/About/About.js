@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./About.css";
 import iconCode from "../../assets/code.png";
 import iconTeam from "../../assets/team.png";
@@ -56,56 +55,52 @@ const About = () => {
   }, []);
 
   return (
-    <>
-      <StarsBackground />
+    <section className="wrapper">
+      <h1>About Me</h1>
 
-      <section className="wrapper">
-        <h1>About Me</h1>
+      <div className="pad-x">
+        <p>
+          I’m a software engineer specialising in front-end development with two
+          years of professional experience building high-traffic,
+          customer-facing web platforms at Flutter UK &amp; Ireland. My toolkit
+          centres on React, JavaScript and TypeScript, and I love using
+          data-driven experimentation and agile delivery to turn ideas into
+          seamless, production-ready user experiences.
+        </p>
 
-        <div className="pad-x">
-          <p>
-            I’m a software engineer specialising in front-end development with
-            two years of professional experience building high-traffic,
-            customer-facing web platforms at Flutter UK &amp; Ireland. My
-            toolkit centres on React, JavaScript and TypeScript, and I love
-            using data-driven experimentation and agile delivery to turn ideas
-            into seamless, production-ready user experiences.
-          </p>
+        <p>
+          Above all, I’m passionate about creating accessible, high-performance
+          products and championing diversity in tech — whether by helping women
+          pivot into tech careers, sharing knowledge to foster continuous
+          learning, or advocating for inclusive design in every project I take
+          on.
+        </p>
 
-          <p>
-            Above all, I’m passionate about creating accessible,
-            high-performance products and championing diversity in tech —
-            whether by helping women pivot into tech careers, sharing knowledge
-            to foster continuous learning, or advocating for inclusive design in
-            every project I take on.
-          </p>
-
-          <div className="stack">
-            {stacks.map((s) => (
-              <span key={s}>{s}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="cards">
-          {qualities.map(({ icon, title, text }) => (
-            <article key={title}>
-              <img
-                src={icon}
-                alt=""
-                width={100}
-                height={100}
-                aria-hidden="true"
-              />
-              <div>
-                <h4>{title}</h4>
-                <p>{text}</p>
-              </div>
-            </article>
+        <div className="stack">
+          {stacks.map((s) => (
+            <span key={s}>{s}</span>
           ))}
         </div>
-      </section>
-    </>
+      </div>
+
+      <div className="cards">
+        {qualities.map(({ icon, title, text }) => (
+          <article key={title}>
+            <img
+              src={icon}
+              alt=""
+              width={100}
+              height={100}
+              aria-hidden="true"
+            />
+            <div>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 };
 

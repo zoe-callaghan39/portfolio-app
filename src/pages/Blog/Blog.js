@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import StarsBackground from "../../components/StarsBackground/StarsBackground";
 import "./Blog.css";
 
 import blog1 from "../../assets/blog1.png";
@@ -46,32 +45,28 @@ const Blog = () => {
   }, []);
 
   return (
-    <>
-      <StarsBackground />
+    <section className="blog-page">
+      <h1 className="blog-title">Blog</h1>
 
-      <section className="blog-page">
-        <h1 className="blog-title">Blog</h1>
+      <div className="blog-grid">
+        {posts.map(({ title, img, desc, link }) => (
+          <article key={title} className="blog-card">
+            <BlogImage src={img} alt={title} />
 
-        <div className="blog-grid">
-          {posts.map(({ title, img, desc, link }) => (
-            <article key={title} className="blog-card">
-              <BlogImage src={img} alt={title} />
+            <div className="blog-content">
+              <h4 className="blog-card-title">{title}</h4>
+              <p className="blog-desc">{desc}</p>
+            </div>
 
-              <div className="blog-content">
-                <h4 className="blog-card-title">{title}</h4>
-                <p className="blog-desc">{desc}</p>
-              </div>
-
-              <div className="blog-footer">
-                <a href={link} className="blog-btn">
-                  Read&nbsp;More
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    </>
+            <div className="blog-footer">
+              <a href={link} className="blog-btn">
+                Read&nbsp;More
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 };
 
