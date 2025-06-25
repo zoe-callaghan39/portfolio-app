@@ -7,8 +7,14 @@ const StarsBackground = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    const INITIAL_STARS = 900;
-    const NEW_STAR_EVERY = 10;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (reduceMotion) return;
+
+    const INITIAL_STARS = isMobile ? 120 : 900;
+    const NEW_STAR_EVERY = isMobile ? 250 : 10;
     const DIM_RATIO = 0.5;
 
     const spawnStar = (sprinkle = false) => {
@@ -28,12 +34,12 @@ const StarsBackground = () => {
         width: `${size}px`,
         height: `${size}px`,
         left: `${x}%`,
-        top: `-5px`,
+        top: "-5px",
         animation: `
           ${
             isDim ? "twinkleDim" : "twinkleBright"
           } ${tw}s infinite ease-in-out ${delay}s,
-          fall    ${fall}s        linear   forwards       ${delay}s
+          fall ${fall}s linear forwards ${delay}s
         `.trim(),
       });
 
@@ -46,10 +52,12 @@ const StarsBackground = () => {
 
     for (let i = 0; i < INITIAL_STARS; i++) spawnStar(true);
 
-    const timer = setInterval(() => spawnStar(false), NEW_STAR_EVERY);
+    const intervalId = setInterval(() => {
+      if (!document.hidden) spawnStar(false);
+    }, NEW_STAR_EVERY);
 
     return () => {
-      clearInterval(timer);
+      clearInterval(intervalId);
       container.innerHTML = "";
     };
   }, []);
