@@ -13,7 +13,11 @@ const BlogPost2 = () => (
     <section className="bp2-wrapper">
       <div className="bp2-header">
         <div className="bp2-header-left">
-          <h1>Levelling Up from Junior to Mid-Level</h1>
+          <h1>
+            Levelling Up from
+            <br className="bp2-mobile-break" />
+            Junior to Mid-Level
+          </h1>
           <img src={rocket} alt="Rocket" className="bp2-rocket" />
         </div>
         <Link to="/blog" className="bp2-back">

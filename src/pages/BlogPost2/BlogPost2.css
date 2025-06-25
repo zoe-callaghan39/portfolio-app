@@ -1,3 +1,4 @@
+  /* DESKTOP STYLES */
 @media (min-width: 769px) {
     .bp2-wrapper {
       position: relative;      
@@ -46,9 +47,10 @@
     }
   
     .bp2-rocket {
-      width: 60px;
-      height: auto;
       opacity: .9;
+      width: 90px;
+      height: auto;
+      margin: -15px;
     }
   
     .bp2-back {
@@ -63,7 +65,6 @@
       opacity: .85;
     }
   
-    /* body text */
     .bp2-text {
       padding: 0 1rem;
       display: flex;
@@ -84,5 +85,90 @@
       margin-bottom: .4rem;
       font-size: .9rem;
     }
+
+    .bp2-mobile-break { 
+      display: none; 
+    }
   }
+
+  /* MOBILE STYLES */
+@media (max-width: 768px) {
+  .bp2-wrapper {
+    padding: 1rem 1.25rem
+             calc(6rem + env(safe-area-inset-bottom,0)); 
+    background: var(--panel-bg, rgba(255,255,255,0.10));
+    backdrop-filter: blur(var(--panel-blur,6px));
+    border-radius: .75rem;
+    max-width: none;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    margin: 1.1rem;
+    margin-top: 3px;
+  }
+
+  .bp2-wrapper h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    margin: 0 0 2rem;
+    color: rgba(255,255,255,0.80);
+    position: relative;
+  }
+
+  .bp2-wrapper h1::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: rgba(255,255,255,0.80);
+    border-radius: 2px;
+  }
+
+  .bp2-rocket {
+    width: 70px;       
+    height: auto;
+  }
+
+  .bp2-back {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.3rem;
+    width: 40px;
+    display: block;
+  }
+  .bp2-back img { 
+    width: 100%; 
+    height: auto; 
+    opacity: .7; 
+  }
+
+  .bp2-body {
+    display: flex;
+    flex-direction: column;      
+    gap: 1.6rem;
+  }
+
+  .bp2-text p {
+    font-size: .85rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 0 1.1rem;
+  }
+
+  .bp2-text ul { 
+    margin: .6rem 0 1.3rem 1.2rem; 
+  }
+
+  .bp2-text li { 
+    font-size: .85rem; 
+    margin-bottom: .45rem; 
+  }
+
+  .bp2-mobile-break { 
+    display: inline; 
+  }
+}
+
   

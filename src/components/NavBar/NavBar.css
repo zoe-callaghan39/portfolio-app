@@ -1,17 +1,16 @@
+/* DESKTOP STYLES */
 @media (min-width: 769px) {
-
   .nav {
-    position: sticky;        
-    top: 20px;                
-    z-index: 4;               
-    margin: 0 auto;           
-    margin-top: 40px;
+    position: sticky;
+    top: 20px;
+    z-index: 4;
+    margin: 40px auto 0 auto;
+    width: max-content;
+    padding: 0.75rem 2.5rem;
     background: var(--panel-bg, rgba(255,255,255,.20));
     backdrop-filter: blur(var(--panel-blur,6px));
-    padding: 0.75rem 2.5rem;
-    border-radius: 9999px;       
+    border-radius: 9999px;
     box-shadow: 0 0 8px rgba(0,0,0,.25);
-    width: max-content;         
     display: flex;
   }
 
@@ -25,7 +24,7 @@
 
   .nav a {
     color: rgba(255,255,255,.60);
-    font-family: inherit;      
+    font-family: inherit;
     font-weight: 500;
     font-size: 1.1rem;
     text-decoration: none;
@@ -33,7 +32,54 @@
   }
 
   .nav a:hover,
-  .nav a:focus { color: #fff; }
+  .nav a:focus,
   .nav a.active { color: #fff; }
-  .nav ul { flex-direction: row; }
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    bottom: env(safe-area-inset-bottom, 0);       
+    left: 0;
+    width: 87%;
+    z-index: 1000;
+    margin: 0;
+    padding: 1.25rem 2rem calc(1.25rem + env(safe-area-inset-bottom, 0));
+    background: rgba(43, 43, 43, 0.8);
+    backdrop-filter: blur(var(--panel-blur, 6px));
+    border-radius: 0;                             
+    box-shadow: 0 -4px 12px rgba(0,0,0,.35);
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 480px;                
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav li { flex: 1 1 0; text-align: center; }
+
+  .nav a {
+    display: block;
+    padding: 0.35rem 0;            
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.60);
+    text-decoration: none;
+    transition: color .25s;
+  }
+
+  .nav a:hover,
+  .nav a:focus,
+  .nav a.active { 
+    color: #fff; 
+  }
 }

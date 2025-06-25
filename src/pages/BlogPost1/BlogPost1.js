@@ -11,7 +11,11 @@ const BlogPost1 = () => (
     <StarsBackground />
 
     <section className="bp1-wrapper">
-      <h1>Career Switching Journey</h1>
+      <h1>
+        Career Switching
+        <br className="bp1-mobile-break" />
+        Journey
+      </h1>
       <Link to="/blog" className="bp1-back">
         <img src={arrowIcon} alt="Back to blog" />
       </Link>

@@ -11,3 +11,12 @@
 .page-content {
   flex: 1 1 0;
 }
+
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 0;       
+    padding: 0;       
+  }
+}

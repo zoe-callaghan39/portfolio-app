@@ -7,8 +7,8 @@ const StarsBackground = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    const INITIAL_STARS = 600;
-    const NEW_STAR_EVERY = 25;
+    const INITIAL_STARS = 900;
+    const NEW_STAR_EVERY = 10;
     const DIM_RATIO = 0.5;
 
     const spawnStar = (sprinkle = false) => {
@@ -18,7 +18,7 @@ const StarsBackground = () => {
       const size = Math.random() * 2.9 + 0.8;
       const x = Math.random() * 100;
       const tw = Math.random() * 3 + 2;
-      const fall = Math.random() * 15 + 10;
+      const fall = Math.random() * 15 + 30;
       const isDim = Math.random() < DIM_RATIO;
 
       const progress = sprinkle ? Math.random() : 0;
