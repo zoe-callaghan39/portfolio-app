@@ -125,7 +125,7 @@ const CV = () => (
           <span>(2016 – 2017)</span>
         </p>
         <p className="role">
-          Waitress &amp; Bar Staff | Stick or Twist <span>(2014 – 2016)</span>
+          Waitress &amp; Bar Staff | Stick or Twist <span>(2014 – 2016)</span>
         </p>
         <ul>
           <li>
@@ -165,7 +165,6 @@ const CV = () => (
           </li>
         </ul>
       </Section>
-
       <Section title="Education">
         <h3 className="marker">
           Code First Girls Degree in Full-Stack Software Engineering (Merit)
@@ -205,6 +204,21 @@ const CV = () => (
           <br />
           GCSEs: Grades A*–C in 11 subjects (including Maths, English &amp;
           Science).
+        </p>
+      </Section>
+
+      <Section title="Interests">
+        <p className="marker">
+          Voracious reader hooked on dark dramas and twisty thrillers—whether in
+          paperback, on screen or via a late‑night true‑crime binge. When I’m
+          not turning pages, I’m turning laps: after completing the Great North
+          Swim I’m plotting my next charity open‑water challenge. Evenings often
+          find me tinkering with code on personal projects (like a leaderboard
+          website and weather app I've been working on) or locked in an escape
+          room — 9 completed, zero fails. Top it off with a healthy dose of
+          travel and street‑food sampling, and you have a curiosity‑driven
+          problem solver who brings fresh stories and perspectives to every
+          project.
         </p>
       </Section>
     </div>
